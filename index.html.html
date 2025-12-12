@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surprise Hub</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        background: linear-gradient(135deg, #ff7ac3, #7a85ff);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    /* Center Box */
+    .box {
+        text-align: center;
+        color: #fff;
+        animation: fadeIn 1.5s ease;
+    }
+
+    .box h1 {
+        font-size: 38px;
+        margin-bottom: 25px;
+        font-weight: 600;
+        text-shadow: 0 0 10px #fff;
+    }
+
+    /* Buttons */
+    .btn {
+        display: block;
+        width: 220px;
+        margin: 15px auto;
+        padding: 15px;
+        font-size: 20px;
+        color: white;
+        background: rgba(255, 255, 255, 0.15);
+        border: 2px solid white;
+        border-radius: 14px;
+        text-decoration: none;
+        backdrop-filter: blur(5px);
+        transition: 0.4s;
+        box-shadow: 0 0 15px rgba(255,255,255,0.4);
+    }
+
+    .btn:hover {
+        background: #ffffff;
+        color: #000;
+        transform: scale(1.1);
+        box-shadow: 0 0 25px #fff;
+    }
+
+    /* Floating Hearts */
+    .heart {
+        position: absolute;
+        bottom: -10px;
+        width: 20px;
+        height: 20px;
+        background: red;
+        transform: rotate(45deg);
+        animation: float 6s ease-in-out infinite;
+        opacity: 0.8;
+    }
+
+    .heart:before,
+    .heart:after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: red;
+        border-radius: 50%;
+    }
+
+    .heart:before { top: -10px; left: 0; }
+    .heart:after { left: -10px; top: 0; }
+
+    @keyframes float {
+        0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+        100% { transform: translateY(-650px) rotate(45deg); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>🎉 Choose Your Surprise 🎉</h1>
+
+    <a href="C:\Users\Abhinav\OneDrive\Desktop\Muskan_Birthday_Website\page1.html" class="btn" target="_blank">💗 First Surprise </a>
+    <a href="C:\Users\Abhinav\OneDrive\Desktop\Muskan_Birthday_Website\page2.html" class="btn" target="_blank">✨ Second Surprise</a>
+</div>
+
+<script>
+    // Floating Heart Animations
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+
+    setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>

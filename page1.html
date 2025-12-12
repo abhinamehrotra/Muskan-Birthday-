@@ -1,0 +1,205 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+<meta charset="utf-8" />  
+<meta name="viewport" content="width=device-width,initial-scale=1" />  
+<title>Happy Birthday Muskan</title>  
+<style>  
+button, audio {  
+    border-radius:12px;  
+    box-shadow:0 6px 15px rgba(0,0,0,0.1);  
+}  
+.birthday-message {  
+    max-width: 80%;  
+    margin: 20px auto;  
+    padding: 25px;  
+    background: rgba(255, 240, 245, 0.5); /* light see-through */  
+    border-radius: 20px;  
+    color: #8b3e5b; /* soft dark pink */  
+	box-shadow:0 8px 30px rgba(0,0,0,0.1);
+    font-size: 1.15rem;  
+    line-height: 1.8rem;  
+    text-align: center;  
+    backdrop-filter: blur(8px);  
+}  
+  :root{/bg1:#ffdde1;--bg2:#ee9ca7;--accent:#fff;--muted:rgba(255,255,255,0.9)/}  
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: #111;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7, #ffe3e3, #ffd1dc);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+.container{max-width:900px;margin:24px auto;padding:20px;}  
+  .card{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.8));border-radius:18px;padding:18px;box-shadow:0 12px 30px rgba(0,0,0,0.12);position:relative;overflow:hidden}  
+  .top{display:flex;gap:16px;align-items:center}  
+  .title{flex:1}  
+  h1{margin:0;font-size:1.9rem;color:#b23a6a}  
+  p.sub{margin:4px 0 0;font-size:0.95rem;color:#6b3b4d}  
+  .video-wrap{margin-top:16px;display:flex;justify-content:center}  
+  .video-embed{width:320px;height:570px;border-radius:18px;overflow:hidden;border:6px solid rgba(255,255,255,0.9);box-shadow:0 10px 30px rgba(0,0,0,0.15)}  
+  iframe{width:100%;height:100%;display:block;border:0}  
+  .slideshow{width:270px;height:270px;border-radius:50%;overflow:hidden;border:5px solid #fff;box-shadow:0 6px 20px rgba(0,0,0,0.12);position:relative}  
+  .slideshow img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s;}  
+  .slideshow img.active{opacity:1}  
+  .controls{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}  
+  .btn{
+    padding: 18px 32px;
+    font-size: 1.4rem;
+    background: #ff6b81;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.btn:hover{
+    background: #ff4b61;
+    transform: scale(1.1);
+}
+  .message{margin-top:14px;background:rgba(255,255,255,0.6);padding:12px;border-radius:12px;color:#4b2b3a}  
+  footer.note{text-align:center;margin-top:14px;font-size:12px;color:#6b3b4d}  
+  /* confetti canvas */  
+  #confetti{position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:5}  
+  @media (min-width:760px){.layout{display:grid;grid-template-columns:1fr 320px;gap:20px}.video-embed{height:610px}}  
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+</style>  
+</head>  
+<body>  
+<canvas id="confetti"></canvas>  
+<div class="container">  
+  <div class="card">  
+    <div class="top">  
+      <div class="title">  
+        <h1>Happy Birthday Muskan 🎉💖</h1>  
+        <p class="sub">A little surprise made with code — play the short and enjoy the slideshow.</p>  
+      </div>  
+      <div class="slideshow" aria-hidden="true">  
+        <img src="pic1.jpg" class="active" alt="pic1">  
+        <img src="pic2.jpg" alt="pic2">  
+        <img src="pic3.jpg" alt="pic3">  
+        <img src="pic4.jpg" alt="pic4" style="opacity:0">  
+      </div>  
+    </div>  <div class="layout" style="margin-top:16px">  
+  <div>  
+    <div class="controls" align="right">  
+	  <button class="btn" onclick="startConfetti()">Celebrate 🎊</button>  
+      <button class="btn" onclick="openShort()">Open Short</button>  
+    </div>
+	<div class="video-wrap">  
+		<video controls autoplay loop muted style="width:320px; height:570px; border-radius:18px; border:6px solid rgba(255,255,255,0.9); box-shadow:0 10px 30px rgba(0,0,0,0.15); object-fit:cover;">  
+		<source src="video.mp4" type="video/mp4">  
+		</video>  
+	</div>  
+
+    <div class="message" id="message">  
+      Dear Muskan,<br><br>  
+      You light up rooms and hearts — wishing you a year as lovely as you. Keep smiling, keep shining. 🎂✨  
+    </div>  
+  </div>  
+
+  <aside style="align-self:start">  
+    <div style="padding:14px;background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85));border-radius:12px">  
+      <audio controls autoplay loop style="width:100%;margin-top:6px">  
+        <source src="music.mp3" type="audio/mpeg">  
+      </audio>  
+	  <!-- Birthday Message -->
+
+<div class="birthday-message" style="  
+    max-width: 80%;  
+    margin: 20px auto;  
+    padding: 20px;  
+    background: rgba(255,255,255,0.2);  
+    border-radius: 15px;  
+    color: #4b2b3a;  
+    font-size: 1.1rem;  
+    line-height: 1.6rem;  
+    text-align: center;  
+    backdrop-filter: blur(6px);  
+">  
+Hey Muskan! 💖<br><br>  
+Happy Birthday! 🎂✨<br>  
+Bas yeh bolna tha ki tum kitni amazing ho. Tumhari smile, tumhari baatein aur tumhari vibes har kisi ka din brighten kar deti hai. Seriously, life mein tum jaise dost milna ek blessing hai.<br><br>  
+Har laugh, har crazy moment jo humne share kiya, sab priceless hai. Tumhare saath time spend karna hamesha fun aur memorable hota hai.<br><br>  
+I hope ye saal tumhare liye full of happiness, laughter aur dreams ka sach hone ka saal ho. Tum deserve karti ho world ki saari khushiyan, aur main bas chahata hoon ki tum hamesha smile karte raho.<br><br>  
+Happy Birthday, Muskan! 💞🎉<br>  
+Ye chhoti si surprise bas tumhara day aur bhi special banane ke liye hai.<br><br>  
+<strong>With lots of friendship,</strong><br>  
+Abhinav Mehrotra  
+</div>  
+        </div>  
+      </aside>  
+    </div>  
+  </div>  
+</div>  <script>  
+  // slideshow JS  
+  let slides = document.querySelectorAll('.slideshow img');  
+  let idx = 0;  
+  function showSlide(){  
+    slides.forEach((s)=>s.classList.remove('active'));  
+    slides[idx].classList.add('active');  
+    idx = (idx + 1) % slides.length;  
+  }  
+  setInterval(showSlide, 3000);  
+  
+  // open short in new tab (fallback if iframe autoplay blocked)  
+  function openShort(){  
+    window.open("https://youtube.com/shorts/rk5NYZWZJYc?si=GuUGRJm2zqN1lbIu", "_blank");  
+  }  
+  
+  function shareWA(){  
+    const text = encodeURIComponent("Happy Birthday Muskan! 🎂 Check this surprise: " + window.location.href);  
+    window.open("https://wa.me/?text="+text, "_blank");  
+  }  
+  
+  // Confetti simple implementation  
+  const c = document.getElementById('confetti');  
+  c.width = window.innerWidth;  
+  c.height = window.innerHeight;  
+  const ctx = c.getContext('2d');  
+  const colors = ['#FF6B6B','#FFD93D','#6BCB77','#4D96FF','#9B7BFF'];  
+  let particles = [];  
+  
+  function startConfetti(){  
+    particles = [];  
+    for(let i=0;i<120;i++){  
+      particles.push({  
+        x: Math.random()*c.width,  
+        y: Math.random()*-c.height,  
+        vx:(Math.random()-0.5)*2,  
+        vy:Math.random()*3+2,  
+        r:Math.random()*6+4,  
+        color: colors[Math.floor(Math.random()*colors.length)],  
+        rot: Math.random()*Math.PI,  
+        vr: (Math.random()-0.5)*0.1  
+      });  
+    }  
+    animate();  
+    setTimeout(()=>{particles=[];ctx.clearRect(0,0,c.width,c.height)},9000);  
+  }  
+  
+  let raf;  
+  function animate(){  
+    ctx.clearRect(0,0,c.width,c.height);  
+    particles.forEach(p=>{  
+      p.x+=p.vx; p.y+=p.vy; p.vy+=0.03; p.rot+=p.vr;  
+      ctx.save();  
+      ctx.translate(p.x,p.y);  
+      ctx.rotate(p.rot);  
+      ctx.fillStyle=p.color;  
+      ctx.fillRect(-p.r/2,-p.r/2,p.r,p.r*0.6);  
+      ctx.restore();  
+    });  
+    raf = requestAnimationFrame(animate);  
+  }  
+  
+  // Resize canvas on resize  
+  window.addEventListener('resize', ()=>{c.width=window.innerWidth;c.height=window.innerHeight});  
+</script>  </body>  
+</html>
